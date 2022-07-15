@@ -5,16 +5,17 @@ var  pricelist={
     berries:120
 }
 function calculateFruit(fruitname,quantinty){
-var price = pricelist['fruitname']*quantinty
-  console.log(`${quantinty} ${fruitname}for KES ${price}`);
+var price = pricelist[fruitname]
+
+  console.log(`${quantinty} ${fruitname} for KES ${price * quantinty}`);
 
 }
 calculateFruit('orange',2)
 
 class KioskCalc{
-  constructor(fruit,quantinty){
+  constructor(fruit,quantinty2){
     this.fruit=fruit;
-    this.quantinty=quantinty;
+    this.quantinty2=quantinty2;
     this.fruitPricelist={
       'orang':30,
       'mango':15,
@@ -22,12 +23,12 @@ class KioskCalc{
 
     };
      
-  this.total=()=>{
-    return`${this.quantinty} ${this.fruit} for KES ${parseFloat(this.fruitPricelist.orange*this.quantinty)}`
+  this.total=function(){
+    return`${this.quantinty2} ${this.fruit} for KES ${quantinty2 * this.fruitPricelist.orang}`
   }
 
 }
 }
 
-var KioskCalc=new KioskCalc("orange",5)
-console.log(KioskCalc.total());
+var kioskCalc=new KioskCalc("orange",5)
+console.log(kioskCalc.total());
